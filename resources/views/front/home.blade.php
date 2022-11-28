@@ -66,14 +66,14 @@
                                         <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
                                     </p>
                                     <p class="prod-i-addwrap">
-                                        <a href="#" class="prod-i-add">Xem chi tiết</a>
+                                        <a href="/productDetail/{{$product->id}}" class="prod-i-add">Xem chi tiết</a>
                                     </p>
                                 </div>
                                 <h3>
-                                    <a href="product.html">{{$product->product_name}}</a>
+                                    <a href="/productDetail/{{$product->id}}">{{$product->product_name}}</a>
                                 </h3>
                                 <p class="prod-i-price">
-                                    <b>{{$product->product_price}}</b>
+                                    <b>${{$product->product_price}}</b>
                                 </p>
                                 <div class="prod-i-skuwrapcolor">
                                     <ul class="prod-i-skucolor">

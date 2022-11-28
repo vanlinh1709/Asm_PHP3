@@ -11,7 +11,7 @@ class Product extends Model
     use HasFactory;
     protected $table = 'product';
     protected $fillable = ['product.id', 'product.category_id', 'product.product_name'
-        , 'product.product_price', 'product.promo_price', 'product.product_image',
+        , 'product.product_price', 'product.promo_price', 'product.product_image', 'product.product_des',
         ];
     public function loadList($params=[]) {
         $list = DB::table($this->table)
