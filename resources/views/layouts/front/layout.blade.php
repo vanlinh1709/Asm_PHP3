@@ -114,7 +114,7 @@
 
                 <!-- Catalog menu - start -->
                 <div class="topcatalog">
-                    <a class="topcatalog-btn" href="catalog-list.html"><span>All</span> catalog</a>
+                    <a class="topcatalog-btn" href="catalog-list.html"><span>Tất cả</span> Danh mục</a>
                     <ul class="topcatalog-list">
                         <li>
                             <a href="catalog-list.html">

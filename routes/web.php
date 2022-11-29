@@ -10,7 +10,7 @@ Route::post('/login', 'Auth\LoginController@postLogin');
 Route::middleware(['auth'])->group(function () {
     Route::get('admin', 'Admin\AdminController@index');
 });
-Route::get('/', 'Front\HomeController@index');
+Route::get('/', 'Front\HomeController@index')->name('route_FrontEnd_Home_index');
 Route::get('/productDetail/{id}', 'Front\ProductController@index');
 Route::get('/category/{id}', 'Front\CategoryController@index');
 Route::match(['get', 'post'],'/signUp', 'Front\SignUpController@index')->name('route_FrontEnd_SignUp_index');
