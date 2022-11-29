@@ -34,14 +34,14 @@ class DatabaseSeeder extends Seeder
             $i++;
         }//end while
 //        fullname	email	phonenumber	avatar	address	password	role_id
-        DB::table('role')->insert(
+        DB::table('users')->insert(
             [
                 [
-                    'name' => 'Người dùng'
+                    'name' => 'Nguyen Van A',
+                    'email' => 'admin@gmail.com',
+                    'password'=> Hash::make('123456'),
+                    'role_id' => 2
                 ],
-                [
-                    'name' => 'Quản trị viên'
-                ]
             ]
         );//End ->insert()
     }
