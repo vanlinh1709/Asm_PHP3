@@ -82,11 +82,11 @@
             <div class="shop-menu">
                 <ul>
                     <li class="topauth">
-                        <a href="auth.html">
+                        <a href="/signUp">
                             <i class="fa fa-lock"></i>
                             <span class="shop-menu-ttl">Đăng ký</span>
                         </a>
-                        <a href="auth.html">
+                        <a href="/login">
                             <span class="shop-menu-ttl">Đăng nhập</span>
                         </a>
                     </li>
@@ -803,8 +803,7 @@
 
 </footer>
 <!-- Footer - end -->
-
-
+@yield('script')
 <!-- jQuery plugins/scripts - start -->
 <script src="{{ asset('front/js/jquery-1.11.2.min.js')}}"></script>
 <script src="{{ asset('front/js/jquery.bxslider.min.js')}}"></script>
