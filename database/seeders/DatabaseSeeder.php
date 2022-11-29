@@ -20,22 +20,15 @@ class DatabaseSeeder extends Seeder
         $i = 0;
         while($i < 5) {
             $arr = [
-//                'fullname'=> 'Trần Văn Linh ' . $i,
-//                'email'=> 'linh' .$i . '@gmail.com',
-//                'phonenumber'=> '012345678',
-//                'avatar'=> 'avatar ' .$i. '.jpg',
-//                'address'=> 'Hà nội',
-//                'password' => Hash::make('123456'),
-//                'role_id' => 1,
-
 //	category_id	product_name	product_price	promo_price	number	status
                     'category_id' => 5,
                     'product_name' => 'Product ' .$i,
-                    'product_price' => 100000,
-                    'promo_price' => 80000,
-                    'product_image' => '1.jpg',
-                    'number' => 100,
+                    'product_price' => 100000 + ($i * 5000),
+                    'promo_price' => 80000 + ($i * 5000),
+                    'product_image' => ($i+3).'1'.'.jpg',
+                    'number' => 10 + $i,
                     'status' => 1,
+                    'product_des'=>'- Được xử lý đặc biệt để cải thiện tình trạng co rút vải sau khi giặt. Phần vai và phần thân rộng hơn để tạo cảm giác vừa vặn.'
             ];
             array_push($Bigarr, $arr);
             $i++;
