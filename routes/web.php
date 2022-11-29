@@ -13,3 +13,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', 'Front\HomeController@index');
 Route::get('/productDetail/{id}', 'Front\ProductController@index');
 Route::get('/category/{id}', 'Front\CategoryController@index');
+Route::get('/signUp', 'Front\SignUpController@index');

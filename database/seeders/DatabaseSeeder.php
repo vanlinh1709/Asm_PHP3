@@ -34,8 +34,15 @@ class DatabaseSeeder extends Seeder
             $i++;
         }//end while
 //        fullname	email	phonenumber	avatar	address	password	role_id
-        DB::table('product')->insert(
-            $Bigarr
+        DB::table('role')->insert(
+            [
+                [
+                    'name' => 'Người dùng'
+                ],
+                [
+                    'name' => 'Quản trị viên'
+                ]
+            ]
         );//End ->insert()
     }
 }
