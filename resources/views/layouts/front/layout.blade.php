@@ -75,7 +75,7 @@
     <div class="header-middle">
         <div class="container header-middle-cont">
             <div class="toplogo">
-                <a href="index-2.html">
+                <a href="/">
                     <img src="/img/logo.png" alt="AllStore - MultiConcept eCommerce Template">
                 </a>
             </div>
@@ -506,31 +506,13 @@
                             Danh mục sản phẩm <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="sub-menu">
+                            @foreach($listCate as $c)
                             <li>
-                                <a href="catalog-list.html">
-                                    Danh mục sản phẩm 1
+                                <a href="/category/{{$c->id}}">
+                                    {{$c->cate_name}}
                                 </a>
                             </li>
-                            <li>
-                                <a href="catalog-list-2.html">
-                                    Danh mục sản phẩm 2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="catalog-gallery.html">
-                                    Danh mục sản phẩm 1
-                                </a>
-                            </li>
-                            <li>
-                                <a href="catalog-gallery-2.html">
-                                    Danh mục sản phẩm 2
-                                </a>
-                            </li>
-                            <li>
-                                <a href="catalog-table.html">
-                                    Danh mục sản phẩm 2
-                                </a>
-                            </li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
