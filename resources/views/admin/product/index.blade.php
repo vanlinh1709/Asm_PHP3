@@ -98,7 +98,6 @@
                             <th class="text-center">Trạng thái</th>
                             <th class="text-center">Ngày nhập kho</th>
                         </tr>
-
                         @foreach($list as $item)
                             <tr>
                                 {{--               <td><input type="checkbox" name="chk_hv[]" class="chk_hv" id="chk_hv_{{$item->id}}" value="{{$item->id}}"> </td>--}}

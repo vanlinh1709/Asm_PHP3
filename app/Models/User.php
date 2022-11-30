@@ -45,6 +45,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function loadList() {
+        $fillable = ['name', 'email', 'avatar', 'role_id'];
+        $query = DB::table($this->table)
+            ->select($fillable)
+        $res = $query->get();
+        return $res;
+    }
     public function saveNew($params) {
         //
         $data = array_merge($params['cols'], [
