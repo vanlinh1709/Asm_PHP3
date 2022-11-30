@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::match(['get', 'post'],'/admin/login', 'Auth\LoginController@index')->name('route_BackEnd_Login_index');
 Route::middleware(['auth'])->group(function () {
     Route::get('admin', 'Admin\HomeController@index')->name('route_BackEnd_Home_index');
+    Route::get('admin/product', 'Admin\ProductController@index')->name('route_BackEnd_Product_index');
 });
 
 //Front
