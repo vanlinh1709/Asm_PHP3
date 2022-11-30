@@ -46,9 +46,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function loadList() {
-        $fillable = ['name', 'email', 'avatar', 'role_id'];
+        $fillable = ['id','name', 'email', 'avatar', 'role_id'];
         $query = DB::table($this->table)
-            ->select($fillable)
+            ->select($fillable);
         $res = $query->get();
         return $res;
     }

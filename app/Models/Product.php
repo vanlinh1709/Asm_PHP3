@@ -13,6 +13,13 @@ class Product extends Model
     protected $fillable = ['product.id', 'product.category_id', 'product.product_name'
         , 'product.product_price', 'product.promo_price', 'product.product_image', 'product.product_des',
         ];
+    public function loadListWithPaginate($params=[]) {
+        $list = DB::table($this->table)
+            ->select()
+            ->join('category', 'category.id', '=', 'product.category_id')
+            ->paginate(5);;
+        return $list;
+    }
     public function loadList($params=[]) {
         $list = DB::table($this->table)
                 ->select()

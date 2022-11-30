@@ -22,4 +22,8 @@ class UserController extends Controller
         $this->v['list'] = $list;
         return view('admin.user.index', $this->v);
     }
+    public function add() {
+        $this->v['_title'] = 'Trang thêm tài khoản';
+        return view('admin.user.add', $this->v);
+    }
 }

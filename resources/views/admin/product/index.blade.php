@@ -110,7 +110,7 @@
                                 <td class="text-center">
                                     <img src="/img/front/popular/1/{{$item->product_image}}" height="100">
                                      </td>
-                                <td class="text-center">{{$item->status}}   </td>
+                                <td class="text-center">{{$item->status == 1 ? 'Còn hàng' : 'Hết hàng'}}   </td>
                                 <td class="text-center">{{$item->created_at}}   </td>
                             </tr>
                         @endforeach
@@ -119,9 +119,9 @@
             </form>
         </div>
         <br>
-{{--        <div class="text-center">--}}
-{{--            {{$list->appends($extParams)->links()}}--}}
-{{--        </div>--}}
+        <div class="text-center">
+            {{$list->appends($extParams)->links()}}
+        </div>
         <index-cs ref="index_cs"></index-cs>
     </section>
 @endsection

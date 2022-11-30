@@ -12,10 +12,11 @@ class ProductController extends Controller
     public function __construct() {
         $this->v = [];
     }
-    public function index() {
+    public function index(Request $request) {
         $this->v['_title'] = 'Trang quản lý sản phẩm';
         $modelProduct = new Product();
-        $list = $modelProduct->loadList();
+        $this->v['extParams'] = $request->all();
+        $list = $modelProduct->loadListWithPaginate($this->v['extParams']);
         //
         $this->v['list'] = $list;
         return view('admin.product.index', $this->v);

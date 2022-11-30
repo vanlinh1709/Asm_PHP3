@@ -198,16 +198,32 @@
                 <div class="clearfix">
                     <p class="text-info">{{$objUser->email}}</p>
                 </div>
-
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class=" active menu-open ">
-                    <a href="#"><i class="fa fa-user"></i> <span>Người dùng</span></a>
+                    <a href="/admin/user"><i class="fa fa-user"></i> <span>Người dùng</span></a>
                     <ul class="treeview-menu">
-                        <li><a href=""><i
-                                    class="fa fa-circle-o"></i> Người dùng</a></li>
+                        <li><a href="/admin/user/add"><i
+                                    class="fa fa-circle-o"></i>Thêm người dùng</a></li>
                     </ul>
+                </li>
+                <li class=" active menu-open ">
+                    <a href="/admin/product"><i class="fa fa-user"></i> <span>Sản phẩm</span></a>
+                    <ul class="treeview-menu">
+                        </li> <li><a href=""><i
+                                    class="fa fa-circle-o"></i>Thêm sản phẩm</a></li>
+                    </ul>
+                </li>
+                <li class=" active menu-open ">
+                    <a href="#"><i class="fa fa-user"></i> <span>Danh mục sản phẩm</span></a>
+                    <ul class="treeview-menu">
+                        </li> <li><a href=""><i
+                                    class="fa fa-circle-o"></i>Thêm danh mục</a></li>
+                    </ul>
+                </li>
+                <li class=" active menu-open ">
+                    <a href="#"><i class="fa fa-user"></i> <span>Đơn hàng</span></a>
                 </li>
             </ul>
         </section>
