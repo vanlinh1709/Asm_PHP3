@@ -60,4 +60,7 @@ class User extends Authenticatable
         $res = DB::table($this->table)->insertGetId($data);
         return $res;
     }
+    public function del($id) {
+
+    }
 }

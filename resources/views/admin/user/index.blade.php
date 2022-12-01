@@ -21,7 +21,7 @@
                             </button>
                             <a href="{{ url('/user') }}" class="btn btn-default btn-sm "><i class="fa fa-remove"></i>
                                 Clear </a>
-                            <a href="" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
+                            <a href="{{ url('admin/user/add') }}" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
                                 Add new</a>
                         </div>
                     </div>
@@ -93,6 +93,7 @@
                             </th>
                             <th class="text-center">Ảnh đại diện</th>
                             <th class="text-center">Vai trò</th>
+                            <th class="text-center">Hành động</th>
                         </tr>
 
                         @foreach($list as $item)
@@ -101,14 +102,14 @@
                                 <td class="text-center">{{$item->id}}</td>
                                 <td class="text-center"><a style="color:#333333;font-weight: bold;" href="" style="white-space:unset;text-align: justify;"><i class="fa fa-edit">{{$item->name}}</i></a></td>
                                 <td class="text-center">{{$item->email}}</td>
-                                <td class="text-center">
+                                <td class="text-center" style="text-align: center">
                                     <img id="mat_truoc_preview"
-                                         src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
-{{--                                         src="{{ $item->avatar ?''.Storage::url($item->avatar):'http://placehold.it/100x100' }}"--}}
+                                         src="{{ $item->avatar ? ''.Storage::url($item->avatar):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}"
                                          alt=""
-                                         style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-responsive"/>
+                                         style="max-width: 200px; height:100px;"/>
                                 </td>
                                 <td class="text-center">{{$item->role_id == 1 ? 'Người dùng' : 'Admin'}}</td>
+                                <td class="text-center"><button class="btn btn-info">Cập nhập </button>&nbsp<button class="btn btn-danger"> Xóa</button></td>
                             </tr>
                         @endforeach
                     </table>

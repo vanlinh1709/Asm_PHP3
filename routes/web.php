@@ -9,6 +9,7 @@ Route::get('/', function () {
 Route::match(['get', 'post'],'/admin/login', 'Auth\LoginController@index')->name('route_BackEnd_Login_index');
 Route::middleware(['auth'])->group(function () {
     Route::get('admin', 'Admin\HomeController@index')->name('route_BackEnd_Home_index');
+    Route::get('admin/logout', 'Auth\LoginController@getLogOut')->name('route_Auth_logout');
     Route::get('admin/product', 'Admin\ProductController@index')->name('route_BackEnd_Product_index');
     Route::get('admin/user', 'Admin\UserController@index')->name('route_BackEnd_User_index');
     Route::match(['get', 'post'],'admin/user/add', 'Admin\UserController@add')->name('route_BackEnd_User_add');

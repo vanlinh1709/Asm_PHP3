@@ -18,6 +18,7 @@ class ProductController extends Controller
         $this->v['extParams'] = $request->all();
         $list = $modelProduct->loadListWithPaginate($this->v['extParams']);
         //
+//        dd($list);
         $this->v['list'] = $list;
         return view('admin.product.index', $this->v);
     }

@@ -50,4 +50,8 @@ class LoginController extends Controller
         }
         return view($viewLogin, $this->v);
     }
+    public function getLogOut() {
+        Auth::logout();
+        return redirect('admin/logout');
+    }
 }

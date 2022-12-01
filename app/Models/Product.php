@@ -12,11 +12,12 @@ class Product extends Model
     protected $table = 'product';
     protected $fillable = ['product.id', 'product.category_id', 'product.product_name'
         , 'product.product_price', 'product.promo_price', 'product.product_image', 'product.product_des',
+        'product.category_id', 'category.cate_name', 'product.number', 'product.status', 'product.created_at'
         ];
     public function loadListWithPaginate($params=[]) {
         $list = DB::table($this->table)
-            ->select()
-            ->join('category', 'category.id', '=', 'product.category_id')
+            ->select($this->fillable)
+            ->join('category', 'product.category_id', '=', 'category.id')
             ->paginate(5);;
         return $list;
     }

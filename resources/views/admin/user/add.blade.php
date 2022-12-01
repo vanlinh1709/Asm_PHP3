@@ -78,21 +78,21 @@
                             <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên người dùng <span class="text-danger">(*)</span></label>
 
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="name" id="name" class="form-control" value="@isset($request['name']){{ $request['name'] }}@endisset">
+                                <input type="text" name="name" id="name" class="form-control" value="">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-md-3 col-sm-4 control-label">Email <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="email" id="email" class="form-control" value="@isset($request['email']){{ $request['email'] }}@endisset">
+                                <input type="text" name="email" id="email" class="form-control" value="">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="email" class="col-md-3 col-sm-4 control-label">Mật khẩu <span class="text-danger">(*)</span></label>
                             <div class="col-md-9 col-sm-8">
-                                <input type="password" name="password" id="password" class="form-control" value="@isset($request['password']){{ $request['password'] }}@endisset">
+                                <input type="password" name="password" id="password" class="form-control" value="">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
@@ -103,9 +103,9 @@
                                     <div class="col-xs-6">
                                         <img id="mat_truoc_preview" src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" alt="your image"
                                              style="max-width: 200px; height:100px; margin-bottom: 10px;" class="img-fluid"/>
-                                        <input type="file" name="cmt_mat_truoc" accept="image/*"
+                                        <input type="file" name="avatar" accept="image/*"
                                                class="form-control-file @error('cmt_mat_truoc') is-invalid @enderror" id="cmt_truoc">
-                                        <label for="cmt_truoc">Mặt trước</label><br/>
+                                        <label for="cmt_truoc"></label><br/>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
             </div>
             <!-- /.box-body -->
             <div class="text-center">
-                <button type="submit" class="btn btn-primary"> Save</button>
+                <button type="submit" class="btn btn-primary">Thêm mới</button>
                 <a href="" class="btn btn-default">Cancel</a>
             </div>
             <!-- /.box-footer -->
