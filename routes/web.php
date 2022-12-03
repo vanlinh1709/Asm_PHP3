@@ -22,4 +22,7 @@ Route::get('/category/{id}', 'Front\CategoryController@index');
 Route::match(['get', 'post'],'/signUp', 'Front\SignUpController@index')->name('route_FrontEnd_SignUp_index');
 //
 Route::match(['get', 'post'],'/login', 'Auth\LoginController@index')->name('route_FrontEnd_Login_index');
-
+Route::get('/cart', 'Front\CartController@index')->name('route_FrontEnd_Cart_index');
+Route::get('/cart/add/{id}', 'Front\CartController@add')->name('route_FrontEnd_Cart_add');
+Route::post('/cart/{id}', 'Front\CartController@update')->name('route_FrontEnd_Cart_update');
+Route::get('/cart/{id}', 'Front\CartController@delete')->name('route_FrontEnd_Cart_delete');

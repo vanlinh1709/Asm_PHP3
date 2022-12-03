@@ -170,7 +170,7 @@
                     <a href="#" class="prod-minus"><i class="fa fa-angle-down"></i></a>
                 </p>
                 <p class="prod-addwrap">
-                    <a href="#" class="prod-add" rel="nofollow">Thêm vào giỏ hàng</a>
+                    <a href="/cart/add/{{$product->id}}" class="prod-add" rel="nofollow">Thêm vào giỏ hàng</a>
                 </p>
             </div>
             <ul class="prod-i-props">
