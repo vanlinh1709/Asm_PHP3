@@ -1,3 +1,7 @@
+@php
+    $objUser = \Illuminate\Support\Facades\Auth::user();
+    $numberProductofCart = \Gloudemans\Shoppingcart\Facades\Cart::content()->count();
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('front/css/swiper.css')}}">
     <link rel="stylesheet" href="{{ asset('front/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('front/css/media.css')}}">
-
+    @yield('css')
 </head>
 <body>
 <!-- Header - start -->
@@ -81,22 +85,28 @@
             </div>
             <div class="shop-menu">
                 <ul>
-                    <li class="topauth">
+                    <li class="topauth" >
                         <a href="/signUp">
                             <i class="fa fa-lock"></i>
-                            <span class="shop-menu-ttl">Đăng ký</span>
+                            <span class="" @isset($objUser){{'hidden'}}@endisset>Đăng ký</span>
                         </a>
                         <a href="/login">
-                            <span class="shop-menu-ttl">Đăng nhập</span>
+                            <span class="" @isset($objUser){{'hidden'}}@endisset >Đăng nhập</span>
                         </a>
+                            <span class="" >@isset($objUser){{$objUser->name}}@endisset </span>
+                           @isset($objUser)
+                                <a href="{{route('route_Auth_Client_logout')}}">
+                                    | Đăng xuất
+                                </a>
+                                    @endisset
                     </li>
 
                     <li>
                         <div class="h-cart">
-                            <a href="cart.html">
+                            <a href="{{route('route_FrontEnd_Cart_index')}}">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span class="shop-menu-ttl">Giỏ hàng</span>
-                                (<b>0</b>)
+                                (<b>{{$numberProductofCart}}</b>)
                             </a>
                         </div>
                     </li>

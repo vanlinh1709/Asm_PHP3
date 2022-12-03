@@ -74,7 +74,7 @@
                 <li class="cart-summ">Tổng tiền: <b>${{ Cart::subTotal() }}</b></li>
             </ul>
             <div class="cart-submit">
-                <a href="#" class="cart-submit-btn">Thanh toán</a>
+                <a href="{{route('route_FrontEnd_Order_index')}}" class="cart-submit-btn">Thanh toán</a>
                 <a href="{{route('route_FrontEnd_Cart_clear')}}" class="cart-clear">Xóa giỏ hàng</a>
             </div>
         <!-- Cart Items - end -->

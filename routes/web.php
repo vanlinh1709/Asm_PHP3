@@ -27,3 +27,5 @@ Route::get('/cart/add/{id}', 'Front\CartController@add')->name('route_FrontEnd_C
 Route::post('/cart/update/{id}', 'Front\CartController@update')->name('route_FrontEnd_Cart_update');
 Route::get('/cart/delete/{id}', 'Front\CartController@delete')->name('route_FrontEnd_Cart_delete');
 Route::get('/cart/clear', 'Front\CartController@clear')->name('route_FrontEnd_Cart_clear');
+Route::get('/order', 'Front\OrderController@index')->name('route_FrontEnd_Order_index');
+Route::get('front/logout', 'Auth\LoginController@getLogOut')->name('route_Auth_Client_logout');

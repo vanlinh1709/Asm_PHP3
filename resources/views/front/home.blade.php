@@ -67,6 +67,8 @@
                                     </p>
                                     <p class="prod-i-addwrap">
                                         <a href="/productDetail/{{$product->id}}" class="prod-i-add">Xem chi tiết</a>
+                                        <br>
+                                        <a href="{{route('route_FrontEnd_Cart_add', $product->id)}}" class="prod-i-add">Thêm vào giỏ hàng</a>
                                     </p>
                                 </div>
                                 <h3>
