@@ -24,5 +24,6 @@ Route::match(['get', 'post'],'/signUp', 'Front\SignUpController@index')->name('r
 Route::match(['get', 'post'],'/login', 'Auth\LoginController@index')->name('route_FrontEnd_Login_index');
 Route::get('/cart', 'Front\CartController@index')->name('route_FrontEnd_Cart_index');
 Route::get('/cart/add/{id}', 'Front\CartController@add')->name('route_FrontEnd_Cart_add');
-Route::post('/cart/{id}', 'Front\CartController@update')->name('route_FrontEnd_Cart_update');
-Route::get('/cart/{id}', 'Front\CartController@delete')->name('route_FrontEnd_Cart_delete');
+Route::post('/cart/update/{id}', 'Front\CartController@update')->name('route_FrontEnd_Cart_update');
+Route::get('/cart/delete/{id}', 'Front\CartController@delete')->name('route_FrontEnd_Cart_delete');
+Route::get('/cart/clear', 'Front\CartController@clear')->name('route_FrontEnd_Cart_clear');

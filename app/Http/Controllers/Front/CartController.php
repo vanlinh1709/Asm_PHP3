@@ -43,6 +43,8 @@ class CartController extends Controller
         ];
 //        dd($data);
         Cart::add($data);
+        return redirect()->back();
+
     }
     public function update(Request $request, $rowId)
     {
@@ -55,6 +57,11 @@ class CartController extends Controller
     {
         Cart::remove($rowId);
 
+        return redirect()->back();
+    }
+    public function clear() {
+//        dd(1);
+        Cart::destroy();
         return redirect()->back();
     }
 }

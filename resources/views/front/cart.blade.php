@@ -9,26 +9,25 @@
         <ul class="b-crumbs">
             <li>
                 <a href="index-2.html">
-                    Home
+                    Trang chủ
                 </a>
             </li>
             <li>
-                <span>Cart</span>
+                <span>Giỏ hàng</span>
             </li>
         </ul>
-        <h1 class="main-ttl"><span>Cart</span></h1>
+        <h1 class="main-ttl"><span>Giỏ hàng</span></h1>
         <!-- Cart Items - start -->
-        <form action="#">
 
             <div class="cart-items-wrap">
                 <table class="cart-items">
                     <thead>
                     <tr>
-                        <td class="cart-image">Photo</td>
-                        <td class="cart-ttl">Products</td>
-                        <td class="cart-price">Price</td>
-                        <td class="cart-quantity">Quantity</td>
-                        <td class="cart-summ">Summ</td>
+                        <td class="cart-image">Ảnh sản phẩm</td>
+                        <td class="cart-ttl">Sản phẩm</td>
+                        <td class="cart-price">Giá tiền</td>
+                        <td class="cart-quantity">Số lượng</td>
+                        <td class="cart-summ">Tổng</td>
                         <td class="cart-del">&nbsp;</td>
                     </tr>
                     </thead>
@@ -72,19 +71,13 @@
                 </table>
             </div>
             <ul class="cart-total">
-                <li class="cart-summ">TOTAL: <b>${{ Cart::subTotal() }}</b></li>
+                <li class="cart-summ">Tổng tiền: <b>${{ Cart::subTotal() }}</b></li>
             </ul>
             <div class="cart-submit">
-                <div class="cart-coupon">
-                    <input placeholder="your coupon" type="text">
-                    <a class="cart-coupon-btn" href="#"><img src="img/ok.png" alt="your coupon"></a>
-                </div>
-                <a href="#" class="cart-submit-btn">Checkout</a>
-                <a href="#" class="cart-clear">Clear cart</a>
+                <a href="#" class="cart-submit-btn">Thanh toán</a>
+                <a href="{{route('route_FrontEnd_Cart_clear')}}" class="cart-clear">Xóa giỏ hàng</a>
             </div>
-        </form>
         <!-- Cart Items - end -->
-
     </section>
 </main>
 <!-- Main Content - end -->
