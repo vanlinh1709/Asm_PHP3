@@ -13,9 +13,9 @@
                 <!-- Checkout Billing Details -->
                 <div class="col-lg-6">
                     <div class="checkout-billing-details-wrap">
-
+                        <form action="{{route('route_FrontEnd_Order_add')}}" method="post">
+                            @csrf
                         <h5 class="checkout-title">Thông tin thanh toán</h5>
-                        <form method="post" action="">
 
                             <div class="billing-form-wrap">
                                 <div class="row">
@@ -23,7 +23,6 @@
                                         <div class="single-input-item">
                                             <label for="f_name" class="required">Họ và tên</label>
                                             <input type="text" id="f_name" placeholder="Họ và tên" name="name" value="@isset($objUser){{ $objUser->name}}@endisset">
-                                            <input type="hidden" name="id" value="50">
                                         </div>
                                     </div>
                                 </div>
@@ -49,13 +48,12 @@
                                     <textarea name="ordernote" id="ordernote" cols="30" rows="3" placeholder="Ghi ghi cho cho người vận chuyển"></textarea>
                                 </div>
                             </div>
-                        </form></div>
+                        </div>
                 </div>
 
                 <!-- Order Summary Details -->
                 <div class="col-lg-6">
-                    <form action="/order/add" method="post">
-                        @csrf
+
                     <div class="order-summary-details">
                         <h5 class="checkout-title">Chi tiết đơn hàng</h5>
                         <div class="order-summary-content">

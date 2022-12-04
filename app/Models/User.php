@@ -99,4 +99,11 @@ class User extends Authenticatable
             ->update($dataUpdate);
         return $res;
     }
+    public function getIdbyEmail($email) {
+        $query = DB::table($this->table)
+            ->select('id')
+            ->where('email', '=' , $email);
+        $res = $query->first();
+        return $res;
+    }
 }
