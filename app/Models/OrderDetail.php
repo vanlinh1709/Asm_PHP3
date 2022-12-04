@@ -15,4 +15,11 @@ class OrderDetail extends Model
         $res = DB::table($this->table)->insertGetId($params['cols']);
         return $res;
     }
+    public function loadList($id) {
+        $res = DB::table($this->table)
+            ->select()
+            ->where('order_id', '=', $id)
+            ->get();
+        return $res;
+}
 }

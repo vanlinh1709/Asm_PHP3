@@ -23,6 +23,12 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['get', 'post'],'admin/product/add', 'Admin\ProductController@add')->name('route_BackEnd_Product_add');
     Route::match(['get', 'post'],'admin/product/update/{id}', 'Admin\ProductController@update')->name('route_BackEnd_Product_update');
     Route::get('/admin/deleteProduct/{id}', 'Admin\ProductController@delete')->name('route_BackEnd_Product_delete');
+    //order
+    Route::get('admin/order', 'Admin\OrderController@index')->name('route_BackEnd_Order_index');
+    Route::match(['get', 'post'],'admin/order/update/{id}', 'Admin\OrderController@update')->name('route_BackEnd_Order_update');
+    //
+    Route::get('admin/orderDetail/{id}', 'Admin\OrderController@detail')->name('route_BackEnd_Order_detail');
+
 });
 
 //Front

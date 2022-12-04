@@ -223,7 +223,7 @@
                     </ul>
                 </li>
                 <li class=" active menu-open ">
-                    <a href="#"><i class="fa fa-user"></i> <span>Đơn hàng</span></a>
+                    <a href="{{route('route_BackEnd_Order_index')}}"><i class="fa fa-user"></i> <span>Đơn hàng</span></a>
                 </li>
             </ul>
         </section>
