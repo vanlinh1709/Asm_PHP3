@@ -59,7 +59,7 @@
                         @foreach($listCateWithProduct as $product)
                             <li class="prod-i">
                                 <div class="prod-i-top">
-                                    <a href="/productDetail/{{$product->id}}" class="prod-i-img"><!-- NO SPACE --><img src="img/front/popular/1/{{$product->product_image}}" alt="Aspernatur excepturi rem"><!-- NO SPACE --></a>
+                                    <a href="/productDetail/{{$product->id}}" class="prod-i-img"><!-- NO SPACE --><img src="{{ $product->product_image ? ''.Storage::url($product->product_image):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}" alt="Aspernatur excepturi rem"><!-- NO SPACE --></a>
                                     <p class="prod-i-info">
                                         <a href="#" class="prod-i-favorites"><span>Yêu thích</span><i class="fa fa-heart"></i></a>
                                         <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>

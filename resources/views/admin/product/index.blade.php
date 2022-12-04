@@ -21,7 +21,7 @@
                             </button>
                             <a href="{{ url('/user') }}" class="btn btn-default btn-sm "><i class="fa fa-remove"></i>
                                 Clear </a>
-                            <a href="" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
+                            <a href="{{route('route_BackEnd_Product_add')}}" class="btn btn-info btn-sm"><i class="fa fa-user-plus" style="color:white;"></i>
                                 Add new</a>
                         </div>
                     </div>
@@ -76,7 +76,6 @@
 {{--            </p>--}}
 {{--        @endif--}}
         <div class="box-body table-responsive no-padding">
-            <form action="" method="post">
                 @csrf
                 <span class="pull-right">Tổng số bản ghi tìm thấy: <span
                         style="font-size: 15px;font-weight: bold;">8</span></span>
@@ -97,6 +96,8 @@
                             </th>
                             <th class="text-center">Trạng thái</th>
                             <th class="text-center">Ngày nhập kho</th>
+                            <th class="text-center">Chức năng</th>
+
                         </tr>
                         @foreach($list as $item)
                             <tr>
@@ -107,16 +108,24 @@
                                 <td class="text-center">{{$item->product_price}}   </td>
                                 <td class="text-center">{{$item->promo_price}}   </td>
                                 <td class="text-center">{{$item->number}}   </td>
-                                <td class="text-center">
-                                    <img src="/img/front/popular/1/{{$item->product_image}}" height="100">
-                                     </td>
+                                <td class="text-center" style="text-align: center">
+                                    <img id="mat_truoc_preview"
+                                         src="{{ $item->product_image ? ''.Storage::url($item->product_image):'https://www.pngitem.com/pimgs/m/27-272007_transparent-product-icon-png-product-vector-icon-png.png' }}"
+                                         alt=""
+                                         style="max-width: 200px; height:100px;"/>
+                                </td>
+
                                 <td class="text-center">{{$item->status == 1 ? 'Còn hàng' : 'Hết hàng'}}   </td>
                                 <td class="text-center">{{$item->created_at}}   </td>
+                                <td class="text-center">
+                                    <a href="{{route('route_BackEnd_Product_update', $item->id)}}"><button class="btn btn-info">Chỉnh sửa</button></a>
+                                    <a href="{{route('route_BackEnd_Product_delete', $item->id)}}"><button class="btn btn-danger">Xóa</button></a>
+                                </td>
+
                             </tr>
                         @endforeach
                     </table>
                 </div>
-            </form>
         </div>
         <br>
         <div class="text-center">

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class Product extends Model
 {
@@ -42,5 +43,32 @@ class Product extends Model
             ->where('id','=',$id);
         $obj = $query->first();
         return $obj;
+    }
+
+    //
+    public function saveNew($params) {
+        $res = DB::table($this->table)->insertGetId($params['cols']);
+        return $res;
+    }
+    public function del($id) {
+        $query = DB::table($this->table)
+            ->delete($id);
+        $res = $query;
+        return $res;
+    }
+    public function saveUpdate($params) {
+        if (empty($params['cols']['id'])) {
+            Session::push('errors', 'Khong xac dinh ban ghi can cap nhap');
+        }
+//        dd($params['cols']);
+        $dataUpdate = [];
+        foreach ($params['cols'] as $col => $value) {
+            if($col == 'id') continue;
+            $dataUpdate[$col] = (strlen($value) == 0) ? null:$value;
+        }
+        $res = DB::table($this->table)
+            ->where('id', '=', $params['cols']['id'])
+            ->update($dataUpdate);
+        return $res;
     }
 }

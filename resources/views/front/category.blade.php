@@ -613,7 +613,7 @@
         <div class="prod-items section-items">
             @foreach($listCategoryWithProduct as $product)
             <div class="prodlist-i">
-                <a class="prodlist-i-img" href="/productDetail/{{$product->id}}"><!-- NO SPACE --><img src="/img/front/popular/1/{{$product->product_image}}" alt="Adipisci aperiam commodi"><!-- NO SPACE --></a>
+                <a class="prodlist-i-img" href="/productDetail/{{$product->id}}"><!-- NO SPACE --><img src="{{ $product->product_image ? ''.Storage::url($product->product_image):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}" alt="Adipisci aperiam commodi"><!-- NO SPACE --></a>
                 <div class="prodlist-i-cont">
                     <h3><a href="/productDetail/{{$product->id}}">{{$product->product_name}}</a></h3>
                     <div class="prodlist-i-txt">

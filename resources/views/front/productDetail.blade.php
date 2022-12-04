@@ -31,8 +31,8 @@
             <div class="prod-slider">
                 <ul class="prod-slider-car">
                     <li>
-                        <a data-fancybox-group="product" class="fancy-img" href="/img/front/popular/1/{{$product->product_image}}">
-                            <img src="/img/front/popular/1/{{$product->product_image}}" alt="">
+                        <a data-fancybox-group="product" class="fancy-img" href="{{ $product->product_image ? ''.Storage::url($product->product_image):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}">
+                            <img src="{{ $product->product_image ? ''.Storage::url($product->product_image):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}" alt="">
                         </a>
                     </li>
                     <li>

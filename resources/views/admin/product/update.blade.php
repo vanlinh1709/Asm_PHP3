@@ -75,37 +75,78 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên người dùng <span class="text-danger">(*)</span></label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Tên sản phẩm<span class="text-danger">(*)</span></label>
 
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="name" id="name" class="form-control" value="{{$user->name}}">
+                                <input type="text" name="product_name" id="name" class="form-control" value="{{$item->product_name}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Email <span class="text-danger">(*)</span></label>
+                            <label for="category" class="col-md-3 col-sm-4 control-label">Danh mục sản phẩm<span class="text-danger">(*)</span></label>
+
                             <div class="col-md-9 col-sm-8">
-                                <input type="text" name="email" id="email" class="form-control" value="{{$user->email}}">
-                                <span id="mes_sdt"></span>
+                                <select name="category_id" id="category">
+                                    @foreach($listCate as $l)
+                                        <option value="{{$l->id}}" @if($l->id == $item->category_id) @endif>{{$l->cate_name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-md-3 col-sm-4 control-label">Mật khẩu <span class="text-danger">(*)</span></label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Giá gốc<span class="text-danger">(*)</span></label>
+
                             <div class="col-md-9 col-sm-8">
-                                <input type="password" name="password" id="password" class="form-control" value="">
+                                <input type="text" name="product_price" id="name" class="form-control" value="{{$item->product_price}}">
                                 <span id="mes_sdt"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 col-sm-4 control-label">Ảnh CMND/CCCD</label>
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Giá khuyến mãi<span class="text-danger">(*)</span></label>
+
+                            <div class="col-md-9 col-sm-8">
+                                <input type="text" name="promo_price" id="name" class="form-control" value="{{$item->promo_price}}">
+                                <span id="mes_sdt"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Số luượng<span class="text-danger">(*)</span></label>
+
+                            <div class="col-md-9 col-sm-8">
+                                <input type="text" name="number" id="name" class="form-control" value="{{$item->number}}">
+                                <span id="mes_sdt"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Trạng thái<span class="text-danger">(*)</span></label>
+                            <div class="col-md-9 col-sm-8">
+                                <input type="radio" id="html" name="status" value="1" <?php echo $item->status == 1 ? 'checked' : ''?>>
+                                <label for="html">Còn hàng</label><br>
+                                <input type="radio" id="css" name="status" value="0" <?php echo $item->status == 0 ? 'checked' : ''?>>
+                                <label for="css">Hết hàng</label><br>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ten_de_thi" class="col-md-3 col-sm-4 control-label">Mô tả<span class="text-danger">(*)</span></label>
+
+                            <div class="col-md-9 col-sm-8">
+                                <textarea name="product_des" rows="8" cols="90">{{$item->product_des}}</textarea>
+                                <span id="mes_sdt"></span>
+                            </div>
+                        </div>
+
+                        {{--                        Anh--}}
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-4 control-label">Ảnh sản phẩm</label>
                             <div class="col-md-9 col-sm-8">
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <img id="mat_truoc_preview"
-                                             src="{{ $user->avatar ? ''.Storage::url($user->avatar):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}"
+                                             src="{{ $item->product_image ? ''.Storage::url($item->product_image):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}"
                                              alt=""
                                              style="max-width: 200px; height:100px;"/>
-                                        <input type="file" name="avatar" accept="image/*"
+                                        <input type="file" name="product_image" accept="image/*"
                                                class="form-control-file @error('cmt_mat_truoc') is-invalid @enderror" id="cmt_truoc">
                                         <label for="cmt_truoc"></label><br/>
                                     </div>
@@ -119,7 +160,7 @@
             <!-- /.box-body -->
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Cập nhập</button>
-                <a href="" class="btn btn-default">Hủy</a>
+                <a href="" class="btn btn-default">Cancel</a>
             </div>
             <!-- /.box-footer -->
         </form>

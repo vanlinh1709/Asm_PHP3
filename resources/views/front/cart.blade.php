@@ -36,7 +36,7 @@
                     <tr>
                         <td class="cart-image">
                             <a href="product.html">
-                                <img src="/img/front/popular/1/{{$item->options->image}}" alt="Similique delectus totam">
+                                <img src="{{ $item->options->image ? ''.Storage::url($item->options->image):'https://cdn-icons-png.flaticon.com/512/147/147142.png' }}" alt="Similique delectus totam">
                             </a>
                         </td>
                         <td class="cart-ttl">

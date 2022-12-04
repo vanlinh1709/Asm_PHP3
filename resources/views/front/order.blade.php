@@ -54,6 +54,8 @@
 
                 <!-- Order Summary Details -->
                 <div class="col-lg-6">
+                    <form action="/order/add" method="post">
+                        @csrf
                     <div class="order-summary-details">
                         <h5 class="checkout-title">Chi tiết đơn hàng</h5>
                         <div class="order-summary-content">
@@ -87,11 +89,11 @@
                             <!-- Order Payment Method -->
                             <div class="summary-footer-area col text-center align-center">
                                 <br>
-                                <button type="submit" class="btn btn-sqr text-center">Đặt hàng</button>
+                               <button type="submit" class="btn btn-sqr text-center">Đặt hàng</button>
                             </div>
                         </div>
                     </div>
-
+                    </form>
                 </div>
             </div>
         </div>
