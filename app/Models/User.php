@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -52,6 +53,23 @@ class User extends Authenticatable
         $res = $query->get();
         return $res;
     }
+    public function loadListWithPaginate($params=[]) {
+        $fillable = ['id','name', 'email', 'avatar', 'role_id'];
+        $query = DB::table($this->table)
+            ->select($fillable)
+             ->paginate(5);
+        $res = $query;
+        return $res;
+    }
+
+    public function loadOne($id) {
+        $fillable = ['id','name', 'email', 'avatar', 'role_id'];
+        $query = DB::table($this->table)
+            ->select($fillable)
+            ->where('id', '=', $id);
+        $res = $query->first();
+        return $res;
+    }
     public function saveNew($params) {
         //
         $data = array_merge($params['cols'], [
@@ -61,6 +79,24 @@ class User extends Authenticatable
         return $res;
     }
     public function del($id) {
-
+        $query = DB::table($this->table)
+            ->delete($id);
+        $res = $query;
+        return $res;
+    }
+    public function saveUpdate($params) {
+        if (empty($params['cols']['id'])) {
+            Session::push('errors', 'Khong xac dinh ban ghi can cap nhap');
+        }
+//        dd($params['cols']);
+        $dataUpdate = [];
+        foreach ($params['cols'] as $col => $value) {
+            if($col == 'id') continue;
+            $dataUpdate[$col] = (strlen($value) == 0) ? null:$value;
+        }
+        $res = DB::table($this->table)
+            ->where('id', '=', $params['cols']['id'])
+            ->update($dataUpdate);
+        return $res;
     }
 }

@@ -76,8 +76,6 @@
             </p>
         @endif
         <div class="box-body table-responsive no-padding">
-            <form action="" method="post">
-                @csrf
                 <span class="pull-right">Tổng số bản ghi tìm thấy: <span
                         style="font-size: 15px;font-weight: bold;">8</span></span>
                 <div class="clearfix"></div>
@@ -109,16 +107,18 @@
                                          style="max-width: 200px; height:100px;"/>
                                 </td>
                                 <td class="text-center">{{$item->role_id == 1 ? 'Người dùng' : 'Admin'}}</td>
-                                <td class="text-center"><button class="btn btn-info">Cập nhập </button>&nbsp<button class="btn btn-danger"> Xóa</button></td>
+                                <td class="text-center">
+                                    <a href="{{route('route_BackEnd_User_update', $item->id)}}"><button class="btn btn-info">Cập nhập </button></a>
+                                    &nbsp
+                                    <a href="{{route('route_BackEnd_User_delete', $item->id)}}"><button class="btn btn-danger"> Xóa</button></td></a>
                             </tr>
                         @endforeach
                     </table>
                 </div>
-            </form>
         </div>
         <br>
         <div class="text-center">
-{{--            {{$list->appends($extParams)->links()}}--}}
+            {{$list->appends($extParams)->links()}}
         </div>
         <index-cs ref="index_cs"></index-cs>
     </section>
