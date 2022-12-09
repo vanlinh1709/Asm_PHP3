@@ -17,7 +17,6 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['get', 'post'],'admin/user/update/{id}', 'Admin\UserController@update')->name('route_BackEnd_User_update');
     Route::get('/admin/deleteUser/{id}', 'Admin\UserController@delete')->name('route_BackEnd_User_delete');
     //category
-
     //product
     Route::get('admin/product', 'Admin\ProductController@index')->name('route_BackEnd_Product_index');
     Route::match(['get', 'post'],'admin/product/add', 'Admin\ProductController@add')->name('route_BackEnd_Product_add');
@@ -26,18 +25,18 @@ Route::middleware(['auth'])->group(function () {
     //order
     Route::get('admin/order', 'Admin\OrderController@index')->name('route_BackEnd_Order_index');
     Route::match(['get', 'post'],'admin/order/update/{id}', 'Admin\OrderController@update')->name('route_BackEnd_Order_update');
-    //
+    //orderDetail
     Route::get('admin/orderDetail/{id}', 'Admin\OrderController@detail')->name('route_BackEnd_Order_detail');
-
 });
-
 //Front
+//home
 Route::get('/', 'Front\HomeController@index')->name('route_FrontEnd_Home_index');
 Route::get('/productDetail/{id}', 'Front\ProductController@index');
 Route::get('/category/{id}', 'Front\CategoryController@index');
+//auth
 Route::match(['get', 'post'],'/signUp', 'Front\SignUpController@index')->name('route_FrontEnd_SignUp_index');
-//
 Route::match(['get', 'post'],'/login', 'Auth\LoginController@index')->name('route_FrontEnd_Login_index');
+//cart
 Route::get('/cart', 'Front\CartController@index')->name('route_FrontEnd_Cart_index');
 Route::get('/cart/add/{id}', 'Front\CartController@add')->name('route_FrontEnd_Cart_add');
 Route::post('/cart/update/{id}', 'Front\CartController@update')->name('route_FrontEnd_Cart_update');

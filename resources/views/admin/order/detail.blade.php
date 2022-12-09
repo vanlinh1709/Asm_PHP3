@@ -55,8 +55,6 @@
                                 <p class="">Số điện thoại : {{$order->customer_phonenumber}}</p>
                             </div>
 
-
-
                     </div>
                 </div>
             </div>
