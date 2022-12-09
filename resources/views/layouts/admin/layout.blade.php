@@ -216,7 +216,7 @@
                     </ul>
                 </li>
                 <li class=" active menu-open ">
-                    <a href="#"><i class="fa fa-user"></i> <span>Danh mục sản phẩm</span></a>
+                    <a href="{{route('route_BackEnd_Category_index')}}"><i class="fa fa-user"></i> <span>Danh mục sản phẩm</span></a>
                     <ul class="treeview-menu">
                         </li> <li><a href=""><i
                                     class="fa fa-circle-o"></i>Thêm danh mục</a></li>

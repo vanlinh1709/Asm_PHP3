@@ -17,6 +17,7 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['get', 'post'],'admin/user/update/{id}', 'Admin\UserController@update')->name('route_BackEnd_User_update');
     Route::get('/admin/deleteUser/{id}', 'Admin\UserController@delete')->name('route_BackEnd_User_delete');
     //category
+    Route::get('admin/category', 'Admin\CategoryController@index')->name('route_BackEnd_Category_index');
     //product
     Route::get('admin/product', 'Admin\ProductController@index')->name('route_BackEnd_Product_index');
     Route::match(['get', 'post'],'admin/product/add', 'Admin\ProductController@add')->name('route_BackEnd_Product_add');

@@ -17,7 +17,7 @@ class LoginController extends Controller
         //Chuan bi du lieu mac dinh cho view
         $method_route = Route::currentRouteName();
 //        dd($method_route);
-        $method_redirect_route = 'route_FrontEnd_Home_index';
+        $method_redirect_route = 'route_FrontEnd_Home_index';//route login
         $viewLogin = 'front.login';
         $role_id = 1;
         if($method_route == 'route_BackEnd_Login_index') {
